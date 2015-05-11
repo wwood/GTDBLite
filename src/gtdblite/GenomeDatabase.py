@@ -421,6 +421,7 @@ class GenomeDatabase(object):
             fh = open(batchfile, "rb")
             for line in fh:
                 line = line.rstrip()
+                if line == '': continue #ignore blank lines
                 splitline = line.split("\t")
                 if len(splitline) < 5:
                     splitline += [None] * (5 - len(splitline))
